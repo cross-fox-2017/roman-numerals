@@ -1,9 +1,32 @@
 function to_roman_old(n) {
   // your code here
+  var numeral = ["M","CM","D","CD","C","XC","L","XL","X","V","I"]
+  var arabic  = [1000,900,500,400,100,90,50,40,10,5,1];
+  var string = "";
+
+  for(var i = 0; i < arabic.length; i++){
+    while(n >= arabic[i]){
+      string += numeral[i];
+      n -= arabic[i];
+    }
+  }
+
+  return string;
 }
 
 function to_roman(n) {
   // your implementation code here
+  var lookup = {
+    M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1
+  }, roman = '', i;
+
+  for(i in lookup){
+    while(n >= lookup[i] ) {
+      roman += i;
+      n -= lookup[i];
+    }
+  }
+  return roman;
 }
 
 // Drive code
