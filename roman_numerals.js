@@ -4,7 +4,7 @@ function to_roman_old(n) {
       tampung = "",
       romawi = ['I', 'V', 'X', 'L', 'C', 'D', "M"];
 
-  // jika jumlah digit angka hanya 1
+  // jika jumlah digit angka == 1
   if(number.length == 1 && number != 0) {
       // jika angka lebih kecil dari 5
     if(number < 5) {
@@ -16,12 +16,35 @@ function to_roman_old(n) {
     }
     // jika angka lebih kecil dari 9
     if(number >= 5) {
-      var tampung = 'V';
+      var tampung = romawi[1];
       for(var i = 0; i < n-5; i++) {
         tampung+= romawi[0];
       }
       console.log(tampung);
     }
+  }
+  // jika jumlah digit angka == 2
+  if(number.length == 2 && number < 50) {
+    // cek digit pertama
+    for (var i = 0; i < number[0]; i++) {
+      tampung += romawi[2];
+    }
+    // cek digit kedua < 5
+    if ( number[1] < 5 && number[1] != 0 ) {
+      for ( var i = 0; i < number[1]; i++) {
+        tampung += romawi[0];
+      }
+    }
+    // cek digit kedua > 5
+    if ( number[1] >= 5 && number[1] != 0 ) {
+      tampung += romawi[1]
+      for ( var i = 0; i < number[1]-5; i++) {
+        tampung+= romawi[0];
+      }
+    }
+    console.log(tampung);
+
+
   }
 
 
@@ -29,7 +52,7 @@ function to_roman_old(n) {
 }
 
 
-to_roman_old(12);
+to_roman_old(17);
 
 function to_roman(n) {
   // your implementation code here
