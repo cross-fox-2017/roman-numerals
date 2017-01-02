@@ -76,7 +76,12 @@ function to_roman_old(n) {
       tampung += 'D';
     }
 
-    else if ( number >= 100 && number <= 499) {
+    else if ( number >= 400 && number <= 499) {
+      number = number - 400;
+      tampung += 'CD';
+    }
+
+    else if ( number >= 100 && number <= 399) {
       number = number - 100;
       tampung += 'C';
     }
@@ -86,7 +91,12 @@ function to_roman_old(n) {
       tampung += "L";
     }
 
-    else if ( number >= 10 && number <= 49) {
+    else if ( number >= 40 && number <= 49) {
+      number = number - 40;
+      tampung += 'XL';
+    }
+
+    else if ( number >= 10 && number <= 39) {
       number = number - 10;
       tampung += "X";
     }
@@ -124,7 +134,12 @@ function to_roman(n) {
       tampung += 'D';
     }
 
-    else if ( number >= 100 && number <= 499) {
+    else if ( number >= 400 && number <= 499) {
+      number = number - 400;
+      tampung += 'CD';
+    }
+
+    else if ( number >= 100 && number <= 399) {
       number = number - 100;
       tampung += 'C';
     }
@@ -134,14 +149,29 @@ function to_roman(n) {
       tampung += "L";
     }
 
-    else if ( number >= 10 && number <= 49) {
+    else if ( number >= 40 && number <= 49) {
+      number = number - 40;
+      tampung += 'XL';
+    }
+
+    else if ( number >= 10 && number <= 39) {
       number = number - 10;
       tampung += "X";
+    }
+
+    else if ( number == 9) {
+      number = number - 9;
+      tampung += 'IX';
     }
 
     else if ( number >= 5 && number <= 9) {
       number = number - 5;
       tampung += 'V';
+    }
+
+    else if ( number == 4) {
+      number = number - 4;
+      tampung += 'IV';
     }
 
     else if ( number >= 1 && number <= 4) {
