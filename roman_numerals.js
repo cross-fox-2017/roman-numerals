@@ -1,14 +1,14 @@
 function to_roman_old(n) {
   // your code here
-  var angka = [1000, 500, 100, 50, 10, 5 ,1];
-  var roman = [M, D, C, L, X, V, I];
+  var angka = [1000, 500,400, 100, 50,40, 10, 5,1];
+  var roman = ["M", "D","CD", "C", "L","XL", "X", "V", "I"];
   var result = [];
 
   for (var i = 0; i < angka.length; i++){
-    if (n > angka[i]){
+    if (n >= angka[i]){
       n = n - angka[i];
       result.push(roman[i]);
-      i--;
+      i = i-1;
     }
   }
   return result.join('');
