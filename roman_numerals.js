@@ -1,12 +1,41 @@
 function to_roman_old(n) {
-  // your code here
+    var huruf = ["M", "CM", "D", "DC", "C", "CX", "L", "LX", "X", "VIIII", "V", "IIII", "I"]
+    var angka = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    var hasil = "";
+
+    if (n < 1 || n > 4999) {
+        return ("Angka DiLuar Perhitungan Sistem")
+    } else {
+        for (var i = 0; i < angka.length; i++) {
+          while(n>=angka[i]){
+            hasil += huruf[i]
+            n -= angka[i]
+          }
+        }
+    }
+    return hasil;
 }
 
 function to_roman(n) {
-  // your implementation code here
+  var huruf = ["M", "CM", "D", "DC", "C", "CX", "L", "LX", "X", "IX", "V", "IV", "I"]
+  var angka = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  var hasil = "";
+
+  if (n < 1 || n > 4999) {
+      return ("Angka DiLuar Perhitungan Sistem")
+  } else {
+      for (var i = 0; i < angka.length; i++) {
+        while(n>=angka[i]){
+          hasil += huruf[i]
+          n -= angka[i]
+        }
+      }
+  }
+  return hasil;
 }
 
 // Drive code
+
 console.log("My totally sweet testing script\n");
 console.log("input | expected | actual");
 console.log("———|—————|———");
