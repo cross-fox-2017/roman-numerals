@@ -1,16 +1,39 @@
 function to_roman_old(n) {
-  // your code here
+  var arabic = [1,5,10,40,50,100,400,500,1000]
+  var romawi = ["I","V","X","XL","L","C","CD","D","M"]
+  var result = ''
+
+  for ( var i = arabic.length; i >= 0 ; i--) {
+    while (n >= arabic[i]) {
+      result += romawi[i];
+      n -= arabic[i];
+    }
+  }
+
+  return result;
 }
 
 function to_roman(n) {
-  // your implementation code here
+  var arabic = [1,4,5,9,10,40,50,100,400,500,1000]
+  var romawi = ["I","IV","V","IX","X","XL","L","C","CD","D","M"]
+  var result = ''
+
+  for ( var i = arabic.length; i >= 0 ; i--) {
+    while (n >= arabic[i]) {
+      result += romawi[i];
+      n -= arabic[i];
+    }
+  }
+
+  return result;
 }
+
 
 // Drive code
 console.log("My totally sweet testing script\n");
 console.log("input | expected | actual");
 console.log("———|—————|———");
-console.log("4     | IIII     | ", to_roman_old(4));
+console.log("4   | IIII     | ", to_roman_old(4));
 console.log("9     | VIIII    | ", to_roman_old(9));
 console.log("13    | XIII     | ", to_roman_old(13));
 console.log("1453  | MCDLIII  | ", to_roman_old(1453));
