@@ -1,7 +1,7 @@
 function to_roman_old(n) {
   var yy = n.toString().length;
   var arr2 = n.toString().split("");
-  var result2 = [];
+  var result = [];
 
 
 
@@ -174,104 +174,138 @@ function to_roman_old(n) {
 
   if(yy == 4)
     {
-     for(var qq = 0;qq < arr2[0];qq++)
-       {
-             result2.push("M");
-       }
-
-      if(arr2[1] === 5)
-                {
-                  result2.push("D");
-                }else{
-
-                  if(arr2[1] < 5)
-                  {
-                    if(arr2[1] === "0")
-                      {
-                        result2.push("");
-                      }else{
-
-                                 for(var mm = 0;mm < arr2[1];mm++)
-                                  {
-                                     result2.push("C");
-                              }
-
-                      }
-
-                  }else{
-                          result2.push("D");
-                      var hasilkurang22 = arr2[1] - 5;
-                      for(var zz = 0;zz < hasilkurang22 ;zz++)
-                      {
-                        result2.push("C");
-                      }
-
-                    }
-                }
-
-      if(arr2[2] === 5)
-                 {
-                  result2.push("L");
-                }else{
-
-                  if(arr2[2] < 5)
-                  {
-
-                    if(arr2[2] === "0")
-                      {
-                        result2.push("");
-                      }else{
-                               for(var cc = 0;cc < arr2[2];cc++)
-                                {
-                                   result2.push("X");
-                                }
-
-                      }
-
-                  }else{
-
-                          result2.push("L");
-                      var hasilkurang44 = arr2[2] - 5;
-                      for(var dd = 0;dd < hasilkurang44 ;dd++)
-                    {
-                     result2.push("X");
-                      }
-
-
-                    }
-
-      if(arr2[3] === "5")
+      for(var q = 0;q < arr2[0];q++)
         {
-          result2.push("V");
+              result.push("M");
         }
-         else if(arr2[3] > 5)
-              {
-                result2.push("V");
-                var tt = arr2[3] - 5;
 
-                  for(var uu = 0; uu < tt;uu++)
-                    {
-                      result2.push("I");
-                    }
+       if(arr2[1] === 5)
+                 {
+                   result.push("D");
+                 }else{
 
-              }else{
-                      if(arr2[3] === "0")
-                        {
-                          result2.push("");
+                   if(arr2[1] < 5)
+                   {
+                     if(arr2[1] === "0")
+                       {
+                         result.push("");
+                       }else{
 
-                        }else{
+                         if(arr2[1] === "4")
+                           {
+                             result.push("CD");
+                           }else{
 
-                                 for(var aa = 0;aa < arr2[3];aa++)
-                                  {
-                                     result2.push("I");
-                                  }
-                        }
-              }
-      }
+                                  for(var m = 0;m < arr2[1];m++)
+                                   {
+                                      result.push("C");
+                                   }
+
+                               }
+                       }
+
+                   }else{
+                     if(arr2[1] === "9")
+                       {
+                         result.push("CM");
+                       }else{
+                           result.push("D");
+                       var hasilkurang2 = arr2[1] - 5;
+                       for(var z = 0;z < hasilkurang2 ;z++)
+                     {
+                      result.push("C");
+                       }
+
+                       }
+
+                     }
+                 }
+
+       if(arr2[2] === 5)
+                  {
+                   result.push("L");
+                 }else{
+
+                   if(arr2[2] < 5)
+                   {
+
+                     if(arr2[2] === "0")
+                       {
+                         result.push("");
+                       }else{
+
+                           if(arr2[2] === "4")
+                             {
+                               result.push("XL")
+                             }else{
+
+                                for(var c = 0;c < arr2[2];c++)
+                                 {
+                                    result.push("X");
+                                 }
+
+                             }
+                       }
+
+                   }else{
+                       if(arr2[2]=== "9")
+                         {
+                           result.push("XC");
+                         }else{
+                           result.push("L");
+                       var hasilkurang4 = arr2[2] - 5;
+                       for(var d = 0;d < hasilkurang4 ;d++)
+                     {
+                      result.push("X");
+                       }
+                         }
+
+                     }
+
+       if(arr2[3] === "5")
+         {
+           result.push("V");
+         }
+          else if(arr2[3] > 5)
+               {
+                 if(arr2[3] === "9")
+                   {
+                     result.push("IX");
+                   }else{
+
+                 result.push("V");
+                 var t = arr2[3] - 5;
+
+                   for(var u = 0; u < t;u++)
+                     {
+                       result.push("I");
+                     }
+                   }
+
+
+               }else{
+                       if(arr2[3] === "0")
+                         {
+                           result.push("");
+
+                         }else{
+
+                             if(arr2[3] === "4")
+                               {
+                                 result.push("IV");
+                               }else{
+                                  for(var a = 0;a < arr2[3];a++)
+                                   {
+                                      result.push("I");
+                                   }
+                               }
+                         }
+               }
+       }
 
 
     }
-    return result2.join("");
+    return result.join("");
 
 }
 
