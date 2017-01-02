@@ -1,32 +1,53 @@
-function to_roman_old(n) {
-  var n = n.split("");
+// function to_roman_old(num) {
+//
+//   var romanMap = ["I","V","X","XL","L","C","CD","D","DM","M"];
+//   var numeralMap = [1,5,10,40,50,100,400,500,900,1000];
+//   var romanResult = "";
+//
+//   for(let i =  numeralMap.length ; i >= 0 ;i--){
+//     //let temp = num ;
+//     while(num >= numeralMap[i]){
+//      romanResult += romanMap[i];
+//      num -= numeralMap[i];
+//   }
+// }
+// console.log(romanResult);
+// return romanResult;
+// }
 
-  // your code here
-  //if(n < 5){
-  //  return //n = I
+function to_roman(num) {
 
-  return n;
+  var romanMap = ["I","V","X","XL","L","C","CD","D","DM","M"];
+  var numeralMap = [1,5,10,40,50,100,400,500,900,1000];
+  var romanResult = "";
+
+  for(let i =  numeralMap.length ; i >= 0 ;i--){
+    //let temp = num ;
+    while(num >= numeralMap[i]){
+     romanResult += romanMap[i];
+     num -= numeralMap[i];
+  }
 }
-
-function to_roman(n) {
+console.log(romanResult);
+return romanResult;
   // your implementation code here
 }
-console.log(55);
-// Drive code
+
+//Drive code
 // console.log("My totally sweet testing script\n");
 // console.log("input | expected | actual");
 // console.log("———|—————|———");
-// console.log("4     | IIII     | ", to_roman_old(4));
+//  console.log("4     | IIII     | ", to_roman_old(4));
 // console.log("9     | VIIII    | ", to_roman_old(9));
-// console.log("13    | XIII     | ", to_roman_old(13));
+//  console.log("13    | XIII     | ", to_roman_old(13));
 // console.log("1453  | MCDLIII  | ", to_roman_old(1453));
 // console.log("1646  | MDCXLVI  | ", to_roman_old(1646));
-//
-// console.log("My totally sweet testing script for new roman\n");
-// console.log("input | expected | actual");
-// console.log("———|—————|———");
-// console.log("4     | IV       | ", to_roman(4));
-// console.log("9     | IX       | ", to_roman(9));
-// console.log("13    | XIII     | ", to_roman(13));
-// console.log("1453  | MCDLIII  | ", to_roman(1453));
-// console.log("1646  | MDCXLVI  | ", to_roman(1646));
+// //
+console.log("My totally sweet testing script for new roman\n");
+console.log("input | expected | actual");
+console.log("———|—————|———");
+console.log("4     | IV       | ", to_roman(4));
+console.log("9     | IX       | ", to_roman(9));
+console.log("13    | XIII     | ", to_roman(13));
+console.log("1453  | MCDLIII  | ", to_roman(1453));
+console.log("1646  | MDCXLVI  | ", to_roman(1646));
