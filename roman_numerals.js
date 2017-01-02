@@ -1,9 +1,29 @@
 function to_roman_old(n) {
-  // your code here
+  // var roman1 =['I','IIII','V','VIIII','X','XL','L','XC','C','CD','D','DC','CM','M'];
+  // var num1 = ['1','4','5','9','10','40','50','90','100','400','500','600','900','1000']
+  var roman1 = ['M','CM','D','CD','C','XC','L','XL','X','VIIII','V','IIII','I']
+  var num1 = ['1000','900','500','400','100','90','50','40','10','9','5','4','1']
+  var result1 = '';
+  for (var i = 0; i < roman1.length; i++) {
+    while (n >= num1[i]) {
+      result1 += roman1[i];
+      n -= num1[i];
+    }
+  }
+  return result1;
 }
 
 function to_roman(n) {
-  // your implementation code here
+  var roman1 = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+  var num1 = ['1000','900','500','400','100','90','50','40','10','9','5','4','1']
+  var result1 = '';
+  for (var i = 0; i < roman1.length; i++) {
+    while (n >= num1[i]) {
+      result1 += roman1[i];
+      n -= num1[i];
+    }
+  }
+  return result1;
 }
 
 // Drive code
